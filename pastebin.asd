@@ -12,6 +12,7 @@
 	       #:cl-json
 	       #:cl-html-parse
 	       #:local-time
+	       #:jeffutils
 	       #:split-sequence)
   :components ((:file "package")
                (:file "pastebin")))
