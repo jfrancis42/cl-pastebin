@@ -60,10 +60,10 @@
   (let ((result
 	  (api-post
 	   "https://pastebin.com/api/api_login.php"
-	   (concatenate 'string
-			"api_dev_key=" api-dev-key
-			"&api_user_name=" (quri:url-encode api-user-name)
-			"&api_user_password=" (quri:url-encode api-user-password)))))
+	   (list
+	    (cons "api_dev_key" api-dev-key)
+	    (cons"api_user_name" (quri:url-encode api-user-name))
+	    (cons "api_user_password" (quri:url-encode api-user-password))))))
     (if (equal 200 (nth 1 result))
 	(nth 0 result)
 	result)))
